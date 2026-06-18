@@ -39,6 +39,7 @@ NEXTAUTH_URL=http://localhost:3000
 NEXTAUTH_SECRET=replace-with-a-long-random-secret
 GOOGLE_CLIENT_ID=your-google-oauth-client-id
 GOOGLE_CLIENT_SECRET=your-google-oauth-client-secret
+NEXT_PUBLIC_GOOGLE_AUTH_ENABLED=true
 RAZORPAY_KEY_ID=rzp_test_xxxxxxxxxx
 RAZORPAY_KEY_SECRET=xxxxxxxxxx
 NEXT_PUBLIC_RAZORPAY_KEY_ID=rzp_test_xxxxxxxxxx
@@ -64,7 +65,10 @@ src/types               Shared TypeScript types
 - Add real credentials in `.env.local`.
 - Add MongoDB credentials to make admin-created products, coupons, reviews, and offers appear on the public website.
 - If MongoDB is unavailable, public product sections fall back to the demo cafe products so the site never opens blank.
-- Add Google OAuth credentials in Google Cloud Console and set the callback URL to `/api/auth/callback/google`.
+- In Vercel, add `NEXTAUTH_URL` as your deployed site URL, for example `https://your-project.vercel.app`.
+- In Vercel, add `NEXTAUTH_SECRET`, `GOOGLE_CLIENT_ID`, `GOOGLE_CLIENT_SECRET`, and `NEXT_PUBLIC_GOOGLE_AUTH_ENABLED=true`, then redeploy.
+- In Google Cloud Console, add this authorized redirect URI exactly: `https://your-project.vercel.app/api/auth/callback/google`.
+- If you use a custom domain, also add `https://your-domain.com/api/auth/callback/google` in Google Cloud Console and set `NEXTAUTH_URL=https://your-domain.com` in Vercel.
 - Add Razorpay Checkout script on the checkout client after order creation.
 - Cloudinary credentials are required for local-device product image uploads in `/admin/foods`.
 - Admin routes and management APIs are protected with NextAuth role checks. Set a user's `role` to `admin` in MongoDB to access the admin panel.

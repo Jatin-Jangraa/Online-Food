@@ -105,7 +105,7 @@ export default async function Home() {
               <p className="flex min-w-0 items-start gap-3"><Clock className="shrink-0 text-brand" /> <span>Mon-Fri: 8 AM - 11 PM</span></p>
               <p className="flex min-w-0 items-start gap-3"><Clock className="shrink-0 text-brand" /> <span>Sat-Sun: 7 AM - 12 AM</span></p>
               <p className="flex min-w-0 items-start gap-3"><Truck className="shrink-0 text-brand" /> <span>Delivery within 35 minutes nearby</span></p>
-              <p className="flex min-w-0 items-start gap-3"><MapPin className="shrink-0 text-brand" /> <span>24 Park Street, Kolkata</span></p>
+              <p className="flex min-w-0 items-start gap-3"><MapPin className="shrink-0 text-brand" /> <span>24 Park Street, Fatehabad</span></p>
             </div>
             <NewsletterForm />
           </div>
